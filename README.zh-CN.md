@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Abyss Coder Logo" width="200" src="./source/images/icon.svg"/>
+  <img alt="Abyss Coder Logo" width="200" src="./source/images/logos/icon.svg"/>
 </div>
 
 <div align="center">

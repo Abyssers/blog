@@ -3,11 +3,11 @@ version: 5.0.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /img/logo.svg
+logo: /images/logos/banner.svg
 # Page metadata configurations
 head:
     # URL or path to the website's icon
-    favicon: /img/favicon.svg
+    favicon: /images/logos/icon.svg
     # Web application manifests configuration
     # https://developer.mozilla.org/en-US/docs/Web/Manifest
     manifest:
@@ -114,7 +114,7 @@ navbar:
     links:
         Download on GitHub:
             icon: fab fa-github
-            url: https://github.com/ppoffice/hexo-theme-icarus
+            url: https://github.com/Abyss-Coder/blog
 # Page footer configurations
 footer:
     # Links to be shown on the right of the footer section
@@ -127,7 +127,7 @@ footer:
             url: https://creativecommons.org/licenses/by/4.0/
         Download on GitHub:
             icon: fab fa-github
-            url: https://github.com/ppoffice/hexo-theme-icarus
+            url: https://github.com/Abyss-Coder/blog
 # Article related configurations
 article:
     # Code highlight settings
@@ -225,24 +225,24 @@ widgets:
         position: left
         type: profile
         # Author name
-        author: Your name
+        author: Abyss Coder
         # Author title
-        author_title: Your title
+        author_title: Believe in the abyss!
         # Author's current location
-        location: Your location
+        location: China
         # URL or path to the avatar image
-        avatar: 
+        avatar: /images/logos/icon_padded.png
         # Whether show the rounded avatar image
         avatar_rounded: false
         # Email address for the Gravatar
         gravatar: 
         # URL or path for the follow button
-        follow_link: https://github.com/ppoffice
+        follow_link: https://github.com/Abyss-Coder
         # Links to be shown on the bottom of the profile widget
         social_links:
             Github:
                 icon: fab fa-github
-                url: https://github.com/ppoffice
+                url: https://github.com/Abyss-Coder
             Facebook:
                 icon: fab fa-facebook
                 url: https://facebook.com
