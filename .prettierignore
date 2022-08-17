@@ -4,3 +4,5 @@ themes/icarus/
 !.prettierrc.js
 !.lintstagedrc.js
 !commitlint.config.js
+!*.json
+!*.yml
