@@ -8,11 +8,11 @@
   <a><img src="https://img.shields.io/github/stars/Abyss-Coder/blog"></a>
 </p>
 
-信封深渊吧!
+信奉深渊吧!
 
 ---
 
-[English](./README.zh-CN.md) | 中文文档
+[English](./README.md) | 中文文档
 
 ## 开始
 
