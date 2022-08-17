@@ -1,9 +1,18 @@
 module.exports = {
-    semi: true,
-    endOfLine: "auto",
     printWidth: 120,
-    useTabs: false,
+
     tabWidth: 4,
+    useTabs: false,
+
+    semi: true,
+
+    singleQuote: false,
     quoteProps: "consistent",
+
+    bracketSpacing: true,
+    bracketSameLine: true,
+
     arrowParens: "avoid",
+
+    endOfLine: "auto",
 };
