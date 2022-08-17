@@ -1,3 +1,6 @@
+/**
+ * rules: https://eslint.bootcss.com/docs/rules
+ */
 module.exports = {
     root: true,
     env: {

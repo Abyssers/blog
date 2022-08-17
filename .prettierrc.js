@@ -1,3 +1,6 @@
+/**
+ * options: https://www.prettier.cn/docs/options.html
+ */
 module.exports = {
     printWidth: 120,
 
