@@ -1,19 +1,44 @@
-<div align="center">
-  <img alt="Abyss Coder Logo" width="200" src="./source/images/logos/icon.svg"/>
-</div>
+<p align="left">
+  <img src="./source/images/logos/banner.svg" height="65" alt="Abyss Coder Logo"/>
+</p>
 
-<div align="center">
-  <h1>深渊码农的博客</h1>
-</div>
+<p align="left">
+  <a><img src="https://img.shields.io/github/issues/Abyss-Coder/blog"></a>
+  <a><img src="https://img.shields.io/github/forks/Abyss-Coder/blog"></a>
+  <a><img src="https://img.shields.io/github/stars/Abyss-Coder/blog"></a>
+</p>
 
-<div align="center">
+信封深渊吧!
 
-信奉深渊吧！
+---
 
-</div>
+[English](./README.zh-CN.md) | 中文文档
 
-<div align="center">
+## 开始
 
-[English](./README.md) | 中文文档
+如果您是第一次准备参与该项目，请先将此项目Fork到您的个人仓库，并执行以下命令克隆至本地开发:
 
-</div>
+```sh
+git clone --recurse-submodules <your forked repo url>
+```
+此外，请注意将您的仓库与组织仓库保持同步，并使用以下命令同步至本地:
+
+```sh
+git pull origin main
+git submodule update --init --remote --force # 我们不建议直接更改子模块(主题模块)
+```
+
+使用npm或yarn安装全部依赖（nodejs >= 12.13.0）:
+
+```sh
+# with npm
+npm install 
+
+# with yarn 1.x
+yarn install
+```
+启动hexo服务（热更新模式）:
+
+```sh
+npm run server
+```
