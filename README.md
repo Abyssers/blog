@@ -26,10 +26,10 @@ Otherwise, please sync your forked repo firstly and then:
 
 ```sh
 git pull origin main
-git submodule update --init --remote --force # We do not recommend any changes to the theme module
+git submodule update --init --remote --force # We do not recommend making changes to submodules (theme module) directly
 ```
 
-Install all dependencies with npm (or yarn 1.x):
+Install all dependencies by npm with nodejs version >= 12.13.0 (or yarn 1.x):
 
 ```sh
 npm install # yarn install
