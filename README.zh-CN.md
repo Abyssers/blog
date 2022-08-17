@@ -8,7 +8,7 @@
   <a><img src="https://img.shields.io/github/stars/Abyss-Coder/blog"></a>
 </p>
 
-信封深渊吧!
+信奉深渊吧!
 
 ---
 
