@@ -25,7 +25,7 @@ git clone --recurse-submodules <your forked repo url>
 Otherwise, please sync your forked repo firstly and then:
 
 ```sh
-git pull origin master
+git pull origin main
 git submodule update --init --remote --force # We do not recommend any changes to the theme module
 ```
 
@@ -33,4 +33,10 @@ Install all dependencies with npm (or yarn 1.x):
 
 ```sh
 npm install # yarn install
+```
+
+Start hexo server (in hot-update mode):
+
+```sh
+npm run server
 ```
