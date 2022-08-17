@@ -1,6 +1,4 @@
 module.exports = {
-    eslintIntegration: true,
-
     semi: true,
     endOfLine: "auto",
     printWidth: 120,
