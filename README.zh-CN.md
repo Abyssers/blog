@@ -16,7 +16,7 @@
 
 ## 开始
 
-如果您是第一次准备参与该项目，请先将此项目Fork到您的个人仓库，并执行以下命令克隆至本地开发:
+如果您是第一次准备参与该项目，请先将此项目 fork 到您的个人仓库，并执行以下命令克隆至本地开发:
 
 ```sh
 git clone --recurse-submodules <your forked repo url>
@@ -25,10 +25,10 @@ git clone --recurse-submodules <your forked repo url>
 
 ```sh
 git pull origin main
-git submodule update --init --remote --force # 我们不建议直接更改子模块(主题模块)
+git submodule update --init --remote --force # 我们不建议直接更改子模块（主题模块）
 ```
 
-使用npm或yarn安装全部依赖（nodejs >= 12.13.0）:
+使用 npm 或 yarn 安装全部依赖（nodejs >= 12.13.0）:
 
 ```sh
 # with npm
@@ -37,7 +37,7 @@ npm install
 # with yarn 1.x
 yarn install
 ```
-启动hexo服务（热更新模式）:
+启动 hexo 服务（热更新模式）:
 
 ```sh
 npm run server
