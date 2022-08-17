@@ -16,7 +16,7 @@
 
 ## 开始
 
-如果您是第一次准备参与该项目，请先将此项目 fork 到您的个人仓库，并执行以下命令克隆至本地开发:
+如果您是第一次参与该项目，请先将此项目 fork 到您的个人仓库，并执行以下命令克隆至本地开发:
 
 ```sh
 git clone --recurse-submodules <your forked repo url>
