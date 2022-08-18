@@ -3,6 +3,7 @@
  */
 module.exports = {
     "*.js": ["eslint --fix", "prettier --write"],
-    "*.json": ["prettier --write"],
-    "*.yml": ["prettier --write"],
+    "*.{json,jsonc}": ["prettier --write"],
+    "*.{yml,yaml}": ["prettier --write"],
+    "*.{md,markdown}": ["markdownlint-cli2"],
 };
