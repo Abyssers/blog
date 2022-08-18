@@ -17,7 +17,7 @@
     "fix": true,
 
     /**
-     * Inline configuration: https://github.com/DavidAnson/markdownlint/blob/main/README.md#configuration
+     * inline configuration: https://github.com/DavidAnson/markdownlint/blob/main/README.md#configuration
      */
     "noInlineConfig": false,
 
