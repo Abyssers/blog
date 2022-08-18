@@ -1,0 +1,42 @@
+name: deploy
+on:
+    pull_request:
+        types:
+            - closed
+        branches:
+            - main
+        paths:
+            - "source/**"
+            - "scaffolds/**"
+            - "_config.yml"
+            - "_config.**.yml"
+            - "package.json"
+jobs:
+    deploy_job:
+        if: github.event.pull_request.merged == true
+        runs-on: ubuntu-latest
+        container:
+            image: node:16.13.1
+        steps:
+            - name: init repo
+              uses: actions/checkout@v2
+              with:
+                  ref: main
+                  submodules: recursive
+            - name: install dependencies
+              run: npm install --save
+            - name: generate static pages
+              run: |
+                  npm run clean
+                  npm run build
+            - name: deploy
+              env:
+                  ACTION_DEPLOY_KEY: ${{ secrets.ABYSSCODER_BLOG_DEPLOY_SECRET }}
+              run: |
+                  mkdir -p ~/.ssh/
+                  echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan github.com >> ~/.ssh/known_hosts
+                  git config --global user.name "Morilence"
+                  git config --global user.email "1280659615@qq.com"
+                  npm run deploy
