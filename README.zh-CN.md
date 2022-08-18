@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="./source/images/logos/banner_contain.svg" height="65" alt="Abyss Coder Logo"/>
+  <img src="./source/images/logos/banner_contain.svg" height="60" alt="Abyss Coder Logo"/>
 </p>
 
 <p align="left">
