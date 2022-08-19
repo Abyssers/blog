@@ -1,4 +1,4 @@
-name: deploy
+name: deployment
 on:
     workflow_dispatch:
     pull_request:
