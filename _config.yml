@@ -104,5 +104,5 @@ theme: icarus
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
     - type: git
-      repo: git@github.com:Abyss-Coder/blog-public.git
+      repo: git@github.com:Abyss-Coder/blog-site.git
       branch: main
