@@ -1,17 +1,17 @@
 name: deploy
 on:
-    - workflow_dispatch:
-    - pull_request:
-          types:
-              - closed
-          branches:
-              - main
-          paths:
-              - "source/**"
-              - "scaffolds/**"
-              - "_config.yml"
-              - "_config.**.yml"
-              - "package.json"
+    workflow_dispatch:
+    pull_request:
+        types:
+            - closed
+        branches:
+            - main
+        paths:
+            - "source/**"
+            - "scaffolds/**"
+            - "_config.yml"
+            - "_config.**.yml"
+            - "package.json"
 jobs:
     deploy_job:
         if: github.event.pull_request.merged == true
