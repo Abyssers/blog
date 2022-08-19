@@ -1,0 +1,46 @@
+name: deployment
+on:
+    workflow_dispatch:
+    pull_request:
+        types:
+            - closed
+        branches:
+            - main
+        paths:
+            - "source/**"
+            - "scaffolds/**"
+            - "_config.yml"
+            - "_config.**.yml"
+            - "package.json"
+jobs:
+    deploy:
+        if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true) }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: "[Download Repo]"
+              uses: actions/checkout@v2
+              with:
+                  ref: main
+                  submodules: recursive
+            - name: "[Setup NodeJs]"
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 16
+            - name: "[Install Dependencies]"
+              run: npm install --save
+            - name: "[Generate Static Pages]"
+              run: |
+                  npm run clean
+                  npm run build
+            - name: "[Certify & Deploy]"
+              env:
+                  ACTION_DEPLOY_KEY: ${{ secrets.ABYSSCODER_BLOG_DEPLOY_SECRET }}
+              run: |
+                  mkdir -p ~/.ssh/
+                  echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan github.com >> ~/.ssh/known_hosts
+                  git config user.name "Morilence"
+                  git config user.email "1280659615@qq.com"
+                  npm run deploy
+                  rm -f ~/.ssh/id_rsa
