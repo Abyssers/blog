@@ -24,7 +24,9 @@ jobs:
                   ref: main
                   submodules: recursive
             - name: install dependencies
-              run: npm install --save
+              run: |
+                  chmod 700 .husky/
+                  npm install --save
             - name: generate static pages
               run: |
                   npm run clean
