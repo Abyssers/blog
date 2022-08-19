@@ -14,23 +14,23 @@ on:
             - "package.json"
 jobs:
     deploy_job:
-        if: github.event.pull_request.merged == true
+        if: github.event_name == "workflow_dispatch" || (github.event_name == "pull_request" && github.event.pull_request.merged == true)
         runs-on: ubuntu-latest
         container:
             image: node:16.13.1
         steps:
-            - name: "[init repo]"
+            - name: "[Download Repo]"
               uses: actions/checkout@v2
               with:
                   ref: main
                   submodules: recursive
-            - name: "[install dependencies]"
+            - name: "[Install Dependencies]"
               run: npm install --save
-            - name: "[generate static pages]"
+            - name: "[Generate Static Pages]"
               run: |
                   npm run clean
                   npm run build
-            - name: "[deploy]"
+            - name: "[Deploy]"
               env:
                   ACTION_DEPLOY_KEY: ${{ secrets.ABYSSCODER_BLOG_DEPLOY_SECRET }}
               run: |
