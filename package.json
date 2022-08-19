@@ -1,9 +1,8 @@
 {
     "name": "abyss-coder-blog",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "private": true,
     "scripts": {
-        "prepare": "husky install",
         "build": "hexo generate",
         "clean": "hexo clean",
         "deploy": "hexo deploy",
