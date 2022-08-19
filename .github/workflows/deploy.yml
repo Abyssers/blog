@@ -25,8 +25,8 @@ jobs:
                   submodules: recursive
             - name: install dependencies
               run: |
-                  git update-index --chmod=+x node_modules/husky/husky.sh
                   npm install --save
+                  git update-index --chmod=+x node_modules/husky/husky.sh
             - name: generate static pages
               run: |
                   npm run clean
