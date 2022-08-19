@@ -16,14 +16,16 @@ jobs:
     deploy_job:
         if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true) }}
         runs-on: ubuntu-latest
-        container:
-            image: node:16.13.1
         steps:
             - name: "[Download Repo]"
               uses: actions/checkout@v2
               with:
                   ref: main
                   submodules: recursive
+            - name: "[Setup NodeJs]"
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 16
             - name: "[Install Dependencies]"
               run: npm install --save
             - name: "[Generate Static Pages]"
