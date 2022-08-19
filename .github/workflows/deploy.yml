@@ -18,18 +18,18 @@ jobs:
         container:
             image: node:16.13.1
         steps:
-            - name: init repo
+            - name: "[init repo]"
               uses: actions/checkout@v2
               with:
                   ref: main
                   submodules: recursive
-            - name: install dependencies
+            - name: "[install dependencies]"
               run: npm install --save
-            - name: generate static pages
+            - name: "[generate static pages]"
               run: |
                   npm run clean
                   npm run build
-            - name: deploy
+            - name: "[deploy]"
               env:
                   ACTION_DEPLOY_KEY: ${{ secrets.ABYSSCODER_BLOG_DEPLOY_SECRET }}
               run: |
