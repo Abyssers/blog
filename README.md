@@ -41,6 +41,12 @@ npm install # or: yarn install
 
 > Always keep an eye on our pull requests and update dependencies timely.
 
+Finally, make sure husky is enabled:
+
+```sh
+npx husky install
+```
+
 ## Writing
 
 Start the hot-update server (only for changes in the [source_dir](https://hexo.io/docs/configuration#Directory)):
