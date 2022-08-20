@@ -37,6 +37,7 @@ jobs:
               uses: JamesIves/github-pages-deploy-action@v4
               with:
                   folder: public
+                  token: ${{ secrets.ABYSSERS_DEPLOY_TOKEN }}
                   ssh-key: ${{ secrets.ABYSSERS_DEPLOY_SECRET }}
                   repository-name: Abyssers/abyssers.github.io
                   branch: main
