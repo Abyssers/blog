@@ -33,14 +33,11 @@ jobs:
                   npm run clean
                   npm run build
             - name: "[Certify & Deploy]"
-              env:
-                  ACTION_DEPLOY_KEY: ${{ secrets.ABYSSCODER_BLOG_DEPLOY_SECRET }}
-              run: |
-                  mkdir -p ~/.ssh/
-                  echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-                  chmod 600 ~/.ssh/id_rsa
-                  ssh-keyscan github.com >> ~/.ssh/known_hosts
-                  git config --global user.name "Morilence"
-                  git config --global user.email "1280659615@qq.com"
-                  npm run deploy
-                  rm -f ~/.ssh/id_rsa
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  folder: public
+                  ssh-key: ${{ secrets.ABYSSCODER_BLOG_DEPLOY_SECRET }}
+                  repository-name: Abyssers/abyssers.github.io
+                  branch: main
+                  target-folder: blog
+                  force: false
