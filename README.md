@@ -1,8 +1,9 @@
 <p align="left">
-  <img src="./source/images/logos/banner_contain.svg" height="56" alt="Abyssers' Logo"/>
+  <img src="./source/images/logos/banner_contain.svg" height="64" alt="Abyssers' Logo"/>
 </p>
 
 <p align="left">
+  <a><img src="https://img.shields.io/github/workflow/status/Abyssers/blog/deployment"></a>
   <a><img src="https://img.shields.io/github/issues/Abyssers/blog"></a>
   <a><img src="https://img.shields.io/github/forks/Abyssers/blog"></a>
   <a><img src="https://img.shields.io/github/stars/Abyssers/blog"></a>
