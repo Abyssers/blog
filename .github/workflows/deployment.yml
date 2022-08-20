@@ -23,6 +23,10 @@ jobs:
               with:
                   ref: main
                   submodules: recursive
+            - name: "[Launch SSH Agent]"
+              uses: webfactory/ssh-agent@v0.4.0
+              with:
+                  ssh-private-key: ${{ secrets.ABYSSERS_DEPLOY_SECRET }}
             - name: "[Setup NodeJs]"
               uses: actions/setup-node@v3
               with:
@@ -37,9 +41,7 @@ jobs:
               uses: JamesIves/github-pages-deploy-action@v4
               with:
                   folder: public
-                  token: ${{ secrets.ABYSSERS_DEPLOY_TOKEN }}
-                  ssh-key: ${{ secrets.ABYSSERS_DEPLOY_SECRET }}
+                  ssh-key: true
                   repository-name: Abyssers/abyssers.github.io
                   branch: main
                   target-folder: blog
-                  force: false
