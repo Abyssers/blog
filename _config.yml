@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Abyss Coder Blog
+title: Abyssers' Blog
 subtitle: ""
 description: ""
 keywords:
-author: Abyss Coder
+author: Abyssers
 language: zh-CN
 timezone: Asia/Shanghai
 
@@ -99,10 +99,6 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: icarus
-
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-    - type: git
-      repo: git@github.com:Abyss-Coder/blog-site.git
-      branch: main
+## ci-deployment has been configured for the project
