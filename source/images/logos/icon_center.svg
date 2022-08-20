@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1"
+   viewBox="-14.092 -21.092 142.184 142.184" preserveAspectRatio="xMidYMid meet" style="display:inline;overflow:visible"
+   id="icon_center">
+   <g transform="translate(0,0)">
+      <path fill="#333333" d="m 93.63,100 h 21.21 L 90.69,58.44 75.86,68.61 Z" />
+      <path
+         d="M 57,0 0,100 c 0,0 31.9,0 83.15,-34.92 51.25,-34.92 45.21,-53.51 44.21,-56 -1,-2.49 -6,-9.79 -25.12,-5.77 0,0 24.11,0 9.29,20.34 C 96.71,43.99 52.25,72.34 36.93,74.1 A 1.21,1.21 0 0 1 35.6,72.65 l 21.26,-36.58 9.83,15.5 14.93,-9.27 z"
+         fill="#e42b37" />
+   </g>
+</svg>

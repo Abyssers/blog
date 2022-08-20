@@ -1,17 +1,10 @@
-<svg data-v-2cb57da0="" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    width="420" height="420" viewBox="0 0 420 420" preserveAspectRatio="xMidYMid meet" color-interpolation-filters="sRGB"
-    style="margin: auto;">
-    <g data-v-2cb57da0="" fill="#1c085d" transform="translate(0,46.055) scale(7)">
-        <g transform="translate(0,0)">
-            <rect fill="#1c085d" fill-opacity="0" stroke-width="2" x="0" y="0" width="60" height="46.84133279205571">
-            </rect> <svg x="0" y="0" width="60" height="46.84133279205571" filtersec="colorsb9771784688"
-                style="overflow: visible;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128.0915069580078 100">
-                    <title>e6c5703b-a406-46f3-a79c-55953c2edfab</title>
-                    <path fill="#eb001b" d="M93.63 100h21.21L90.69 58.44 75.86 68.61 93.63 100z"></path>
-                    <path
-                        d="M57 0L0 100s31.9 0 83.15-34.92 45.21-53.51 44.21-56-6-9.79-25.12-5.77c0 0 24.11 0 9.29 20.34S52.25 72.34 36.93 74.1a1.21 1.21 0 0 1-1.33-1.45l21.26-36.58 9.83 15.5 14.93-9.27z"
-                        fill="#1c085d"></path>
-                </svg></svg>
-        </g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1"
+    viewBox="0 0 128.09151 128.09151" preserveAspectRatio="xMidYMid meet" style="display:inline;overflow:visible"
+    id="icon_square">
+    <g transform="translate(0,14.045755)">
+        <path fill="#333333" d="m 93.63,100 h 21.21 L 90.69,58.44 75.86,68.61 Z" />
+        <path
+            d="M 57,0 0,100 c 0,0 31.9,0 83.15,-34.92 51.25,-34.92 45.21,-53.51 44.21,-56 -1,-2.49 -6,-9.79 -25.12,-5.77 0,0 24.11,0 9.29,20.34 C 96.71,43.99 52.25,72.34 36.93,74.1 A 1.21,1.21 0 0 1 35.6,72.65 l 21.26,-36.58 9.83,15.5 14.93,-9.27 z"
+            fill="#e42b37" />
     </g>
 </svg>

@@ -3,11 +3,11 @@ version: 5.0.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /images/logos/banner_center_1920.png
+logo: /images/logos/1x/banner_center.png
 # Page metadata configurations
 head:
     # URL or path to the website's icon
-    favicon: /images/logos/icon_contain.svg
+    favicon: /images/logos/icon_square.svg
     # Web application manifests configuration
     # https://developer.mozilla.org/en-US/docs/Web/Manifest
     manifest:
@@ -223,7 +223,7 @@ widgets:
       # Author's current location
       location: China
       # URL or path to the avatar image
-      avatar: /images/logos/icon_square_qtr_padded_720.png
+      avatar: /images/logos/2x/icon_center.png
       # Whether show the rounded avatar image
       avatar_rounded: false
       # Email address for the Gravatar
