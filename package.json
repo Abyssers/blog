@@ -3,6 +3,7 @@
     "version": "1.0.5",
     "private": true,
     "scripts": {
+        "prepare": "husky install",
         "build": "hexo generate",
         "clean": "hexo clean",
         "deploy": "hexo deploy",

@@ -47,6 +47,8 @@ Finally, make sure husky is enabled:
 npx husky install
 ```
 
+> Although we have set the "prepare" script to ensure that it will be enabled after `npm install`, there is still a possible condition of committing changes without installing dependencies to skip the pre-commit hook.
+
 ## Writing
 
 Start the hot-update server (only for changes in the [source_dir](https://hexo.io/docs/configuration#Directory)):

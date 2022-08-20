@@ -32,7 +32,7 @@ jobs:
               with:
                   node-version: 16
             - name: "[Install Dependencies]"
-              run: npm install --save
+              run: sudo npm install --unsafe-perm=true --allow-root --ignore-scripts
             - name: "[Generate Static Pages]"
               run: |
                   npm run clean
