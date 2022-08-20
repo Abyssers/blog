@@ -24,7 +24,7 @@ jobs:
                   ref: main
                   submodules: recursive
             - name: "[Launch SSH Agent]"
-              uses: webfactory/ssh-agent@v0.4.0
+              uses: webfactory/ssh-agent@v0.5.4
               with:
                   ssh-private-key: ${{ secrets.ABYSSERS_DEPLOY_SECRET }}
             - name: "[Setup NodeJs]"
