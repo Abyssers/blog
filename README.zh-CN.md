@@ -1,11 +1,11 @@
 <p align="left">
-  <img src="./source/images/logos/banner_contain.svg" height="60" alt="Abyss Coder Logo"/>
+  <img src="./source/images/logos/banner_contain.svg" height="56" alt="Abyssers' Logo"/>
 </p>
 
 <p align="left">
-  <a><img src="https://img.shields.io/github/issues/Abyss-Coder/blog"></a>
-  <a><img src="https://img.shields.io/github/forks/Abyss-Coder/blog"></a>
-  <a><img src="https://img.shields.io/github/stars/Abyss-Coder/blog"></a>
+  <a><img src="https://img.shields.io/github/issues/Abyssers/blog"></a>
+  <a><img src="https://img.shields.io/github/forks/Abyssers/blog"></a>
+  <a><img src="https://img.shields.io/github/stars/Abyssers/blog"></a>
 </p>
 
 信奉深渊吧!
