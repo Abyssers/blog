@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="./source/images/logos/banner_contain.svg" height="56" alt="Abyssers' Logo"/>
+  <img src="./source/images/logos/banner_contain.svg" height="64" alt="Abyssers' Logo"/>
 </p>
 
 <p align="left">
