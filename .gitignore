@@ -4,6 +4,7 @@ db.json
 *.log
 node_modules/
 public/
+.husky/_
 .deploy*/
 _multiconfig.yml
 yarn.lock
