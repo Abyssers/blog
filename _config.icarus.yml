@@ -163,7 +163,7 @@ comment:
     type: utterances
     repo: Abyssers/abyssers.github.io
     issue_term: pathname
-    label: blog
+    label: comment
     theme: github-light
 # Donate plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
