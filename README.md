@@ -74,4 +74,4 @@ This project has already integrated automated deployment with Actions. You just 
 
 [Apache 2.0](https://github.com/Abyss-Coder/blog/blob/main/LICENSE)
 
-Copyright 2022 AbyssCoder
+Copyright 2022 Abyssers
