@@ -2,6 +2,9 @@
     "name": "abyssers-blog",
     "version": "1.0.5",
     "private": true,
+    "engines": {
+        "node": ">=12.13.0"
+    },
     "scripts": {
         "prepare": "husky install",
         "build": "hexo generate",
@@ -16,7 +19,7 @@
         "@iktakahiro/markdown-it-katex": "^4.0.1",
         "bulma-stylus": "^0.8.0",
         "hexo": "^6.2.0",
-        "hexo-component-inferno": "^1.2.0",
+        "hexo-component-inferno": "^2.0.0",
         "hexo-deployer-git": "^3.0.0",
         "hexo-generator-archive": "^1.0.0",
         "hexo-generator-category": "^1.0.0",

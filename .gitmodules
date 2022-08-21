@@ -1,3 +1,4 @@
-[submodule "themes/icarus"]
-	path = themes/icarus
-	url = git@github.com:Abyssers/hexo-theme-icarus.git
+[submodule "themes/abyrus"]
+	path = themes/abyrus
+	url = git@github.com:Abyssers/abyrus.git
+	branch = main
