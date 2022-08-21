@@ -160,9 +160,11 @@ search:
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
 comment:
-    type: disqus
-    # Disqus shortname
-    shortname: ""
+    type: utterances
+    repo: Abyssers/abyssers.github.io
+    issue_term: url
+    label: /blog
+    theme: github-light
 # Donate plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
 donates:
