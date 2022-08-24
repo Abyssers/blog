@@ -8,8 +8,11 @@ jobs:
         runs-on: ubuntu-latest
         environment: ABYSSERS_UPDATE_ENV
         steps:
-            - name: "[Get Payloads]"
-              run: echo ${{ github.event.client_payload }}
+            - name: "[Print Payloads]"
+              run: |
+                  echo "ref: ${{ github.event.client_payload.ref }}"
+                  echo "sha: ${{ github.event.client_payload.sha }}"
+                  echo "changes: ${{ github.event.client_payload.changes }}"
             - name: "[Download Repo]"
               uses: actions/checkout@v2
               with:
@@ -22,14 +25,12 @@ jobs:
               uses: peter-evans/create-pull-request@v4
               with:
                   token: ${{ secrets.MORILENCE_GENERAL_PAT }}
+                  base: main
                   commit-message: "ci: updated theme to ${{ github.event.client_payload.sha }}"
                   branch: auto/updating/theme
                   delete-branch: true
                   title: "[Auto] theme updated"
                   labels: auto
-                  reviewers: |
-                      Morilence
-                      GarlicGo
                   team-reviewers: |
                       owners
                       developers
