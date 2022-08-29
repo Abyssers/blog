@@ -25,7 +25,7 @@
 git clone --recurse-submodules <your forked repo url>
 ```
 
-> 禁止从当前仓库的其他分支提交PR。
+> 禁止从当前仓库的其他分支提交 PR。
 
 此外，请注意将您的仓库与组织仓库保持同步，并使用以下命令同步至本地:
 
@@ -71,11 +71,11 @@ npm run server # or: hexo s --debug
 hexo new [layout] <title>
 ```
 
-> 更多与写入相关的命令，参见：https://hexo.io/docs/writing
+> 更多与写作相关的命令，参见：https://hexo.io/docs/writing
 
 ## 部署
 
-本项目基于 Actions 集成了自动化部署能力。只需要把你的内容推送到你的 fork 仓库并创建一个规范的PR，博客站点将在提交的 PR 被批准并合并后，自动更新静态页面。
+本项目基于 Actions 集成了自动化部署能力。只需要把你的内容推送到你的 fork 仓库并创建一个规范的 PR，博客站点将在提交的 PR 被批准并合并后，自动更新静态页面。
 
 ## 开源协议
 
