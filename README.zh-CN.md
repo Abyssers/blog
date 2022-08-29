@@ -34,7 +34,7 @@ git pull origin main
 git submodule update --init --remote --force
 ```
 
-> 我们不建议直接对子模块（尤其是主题模块）进行任何更改，主题的维护由另一个仓库处理：[hexo-theme-icarus](https://github.com/Abyss-Coder/hexo-theme-icarus)。
+> 我们不建议直接对子模块（尤其是主题模块）进行任何更改，主题的维护由另一个仓库处理：[abyrus](https://github.com/Abyssers/abyrus)。
 
 使用 npm 或 yarn 安装全部依赖（nodejs >= 12.13.0）:
 

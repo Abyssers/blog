@@ -34,7 +34,7 @@ git pull origin main
 git submodule update --init --remote --force
 ```
 
-> We do not recommend making any changes to submodules (especially in the theme module) directly. Updating of the theme is usually handled by another repo: [hexo-theme-icarus](https://github.com/Abyss-Coder/hexo-theme-icarus).
+> We do not recommend making any changes to submodules (especially in the theme module) directly. Updating of the theme is usually handled by another repo: [abyrus](https://github.com/Abyssers/abyrus).
 
 Install all dependencies by npm (or yarn 1.x) with nodejs version >= 12.13.0:
 
