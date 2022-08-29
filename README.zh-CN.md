@@ -48,7 +48,6 @@ yarn install
 
 > 时刻关注我们的PR并及时更新依赖。
 
-
 最后，确认已经启用 husky ：
 
 ```sh
