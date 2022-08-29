@@ -3,6 +3,8 @@
 </p>
 
 <p align="left">
+
+  [![license](https://img.shields.io/hexpm/l/apa)](https://github.com/Abyssers/blog/blob/main/LICENSE)
   <a><img src="https://img.shields.io/github/workflow/status/Abyssers/blog/deployment"></a>
   <a><img src="https://img.shields.io/github/issues/Abyssers/blog"></a>
   <a><img src="https://img.shields.io/github/forks/Abyssers/blog"></a>
@@ -32,7 +34,7 @@ git pull origin main
 git submodule update --init --remote --force
 ```
 
-> We do not recommend making any changes to submodules (especially in the theme module) directly. Updating of the theme is usually handled by another repo: [hexo-theme-icarus](https://github.com/Abyss-Coder/hexo-theme-icarus).
+> We do not recommend making any changes to submodules (especially in the theme module) directly. Updating of the theme is usually handled by another repo: [abyrus](https://github.com/Abyssers/abyrus).
 
 Install all dependencies by npm (or yarn 1.x) with nodejs version >= 12.13.0:
 
