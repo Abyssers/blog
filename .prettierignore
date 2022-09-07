@@ -1,5 +1,5 @@
 node_modules/
-themes/icarus/
+themes/
 !.eslintrc.js
 !.prettierrc.js
 !.lintstagedrc.js
