@@ -6,5 +6,5 @@ module.exports = {
     "*.{json,jsonc}": ["prettier --write"],
     "*.{yml,yaml}": ["prettier --write"],
     "*.{md,markdown}": ["markdownlint-cli2"],
-    "source/**/*.{md,markdown}": ["matter-lint --"],
+    "source/**/*.{md,markdown}": ["matter-lint --now --"],
 };
