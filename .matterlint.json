@@ -1,6 +1,7 @@
 {
     "blankLines": 1,
     "force": true,
+    "now": false,
     "write": true,
     "map": {
         "created": "date"
