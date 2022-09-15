@@ -4,6 +4,7 @@ db.json
 *.log
 node_modules/
 public/
+test/
 .husky/_
 .deploy*/
 _multiconfig.yml
