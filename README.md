@@ -57,7 +57,7 @@ npx husky install
 Start the hot-update server (only for changes in the [source_dir](https://hexo.io/docs/configuration#Directory)):
 
 ```sh
-npm run server # or: hexo s --debug
+npm run serve # or: hexo s --debug
 ```
 
 Create a new post or a new page:

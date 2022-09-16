@@ -61,7 +61,7 @@ npx husky install
 启动热更新服务 (仅适用于 [source_dir](https://hexo.io/docs/configuration#Directory) 中的更改)：
 
 ```sh
-npm run server # or: hexo s --debug
+npm run serve # or: hexo s --debug
 ```
 
 创建一篇新博客:
