@@ -222,6 +222,13 @@ widgets:
       author_title: Believe in the abyss!
       # Author's current location
       location: China
+      # Contributors
+      contributors:
+          - name: Morilence
+            avatar: https://avatars.githubusercontent.com/u/44861693
+            link: https://github.com/Morilence
+          - name: GarlicGo
+            avatar: https://avatars.githubusercontent.com/u/50868054
       # URL or path to the avatar image
       avatar: /images/logos/2x/icon_center.png
       # Whether show the rounded avatar image
