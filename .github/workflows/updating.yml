@@ -6,7 +6,7 @@ on:
             - matter-lint-updated
 jobs:
     theme_update:
-        if: ${{ github.event.action.event_type == 'theme-updated' }}
+        if: ${{ github.event.action == 'theme-updated' }}
         runs-on: ubuntu-latest
         environment: ABYSSERS_UPDATE_ENV
         steps:
@@ -39,7 +39,7 @@ jobs:
                   draft: false
 
     matterlint_update:
-        if: ${{ github.event.action.event_type == 'matter-lint-updated' }}
+        if: ${{ github.event.action == 'matter-lint-updated' }}
         runs-on: ubuntu-latest
         environment: ABYSSERS_UPDATE_ENV
         steps:
