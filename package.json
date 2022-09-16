@@ -1,5 +1,5 @@
 {
-    "name": "abyssers-blog",
+    "name": "@abysser/blog",
     "version": "1.0.5",
     "private": true,
     "engines": {
