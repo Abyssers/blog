@@ -114,11 +114,9 @@ widgets:
           - name: Morilence
             avatar: https://avatars.githubusercontent.com/u/44861693
             link: https://github.com/Morilence
-            contributions: 192
           - name: GarlicGo
             avatar: https://avatars.githubusercontent.com/u/50868054
             link: https://www.garlicgo.com/
-            contributions: 15
       avatar: /images/logos/2x/icon_center.png
       avatar_rounded: false
       gravatar: null
