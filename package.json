@@ -16,6 +16,7 @@
         "version": "6.2.0"
     },
     "dependencies": {
+        "@abysser/jit": "^1.3.7",
         "@iktakahiro/markdown-it-katex": "^4.0.1",
         "bulma-stylus": "^0.8.0",
         "hexo": "^6.2.0",
