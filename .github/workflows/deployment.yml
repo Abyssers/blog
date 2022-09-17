@@ -9,6 +9,7 @@ on:
         paths:
             - "source/**"
             - "scaffolds/**"
+            - "themes/**"
             - "_config.yml"
             - "_config.**.yml"
             - "package.json"
