@@ -5,7 +5,7 @@
 <p align="left">
 
   [![license](https://img.shields.io/hexpm/l/apa)](https://github.com/Abyssers/blog/blob/main/LICENSE)
-  <a><img src="https://img.shields.io/github/workflow/status/Abyssers/blog/deployment"></a>
+  <a><img src="https://img.shields.io/github/workflow/status/Abyssers/blog/deploy"></a>
   <a><img src="https://img.shields.io/github/issues/Abyssers/blog"></a>
   <a><img src="https://img.shields.io/github/forks/Abyssers/blog"></a>
   <a><img src="https://img.shields.io/github/stars/Abyssers/blog"></a>
