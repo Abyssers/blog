@@ -56,7 +56,7 @@ jobs:
                   ref: main
                   token: ${{ secrets.MORILENCE_GENERAL_PAT }}
             - name: "[Update the Version of @abysser/jit]"
-              run: npm install @abysser/jit@latest
+              run: npm install @abysser/jit@latest -D
             - name: "[Create Pull Request]"
               uses: peter-evans/create-pull-request@v4
               with:
@@ -89,7 +89,7 @@ jobs:
                   ref: main
                   token: ${{ secrets.MORILENCE_GENERAL_PAT }}
             - name: "[Update the Version of @abysser/matter-lint]"
-              run: npm install @abysser/matter-lint@latest
+              run: npm install @abysser/matter-lint@latest -D
             - name: "[Create Pull Request]"
               uses: peter-evans/create-pull-request@v4
               with:
