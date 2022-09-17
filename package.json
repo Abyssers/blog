@@ -10,7 +10,8 @@
         "build": "hexo generate",
         "clean": "hexo clean",
         "deploy": "hexo deploy",
-        "serve": "hexo server --debug"
+        "serve": "hexo server --debug",
+        "analyse": "node scripts/contributors.analyse.js"
     },
     "hexo": {
         "version": "6.2.0"
