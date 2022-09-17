@@ -2,11 +2,11 @@ name: update
 on:
     repository_dispatch:
         types:
-            - theme-updated
+            - abyrus-updated
             - matter-lint-updated
 jobs:
-    theme:
-        if: ${{ github.event.action == 'theme-updated' }}
+    abyrus:
+        if: ${{ github.event.action == 'abyrus-updated' }}
         runs-on: ubuntu-latest
         environment: ABYSSERS_UPDATE_ENV
         steps:
@@ -21,17 +21,17 @@ jobs:
                   ref: main
                   token: ${{ secrets.MORILENCE_GENERAL_PAT }}
                   submodules: recursive
-            - name: "[Sync Theme Module]"
+            - name: "[Sync Abyrus Theme Module]"
               run: git submodule update --init --remote --force
             - name: "[Create Pull Request]"
               uses: peter-evans/create-pull-request@v4
               with:
                   token: ${{ secrets.MORILENCE_GENERAL_PAT }}
                   base: main
-                  commit-message: "chore: updated theme to ${{ github.event.client_payload.sha }}"
-                  branch: auto/updating/theme
+                  commit-message: "chore: updated abyrus to ${{ github.event.client_payload.sha }}"
+                  branch: ci/updates/abyrus
                   delete-branch: true
-                  title: "chore: updated theme to ${{ github.event.client_payload.sha }}"
+                  title: "chore: updated abyrus to ${{ github.event.client_payload.sha }}"
                   labels: auto
                   team-reviewers: |
                       owners
@@ -62,7 +62,7 @@ jobs:
                   token: ${{ secrets.MORILENCE_GENERAL_PAT }}
                   base: main
                   commit-message: "chore: updated matter-lint to ${{ github.event.client_payload.version }}"
-                  branch: auto/updating/matter-lint
+                  branch: ci/updates/matter-lint
                   delete-branch: true
                   title: "chore: updated matter-lint to ${{ github.event.client_payload.version }}"
                   labels: auto
