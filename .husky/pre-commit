@@ -2,5 +2,3 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npx lint-staged
-node scripts/contributors.analyse.js -w
-git add scripts/contributors.analyse.js
