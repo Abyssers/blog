@@ -39,13 +39,8 @@ if (existsSync(target)) {
                             return contributor;
                         })
                         .sort((a, b) => b["contributions"] - a["contributions"] || 0);
+                    log(profile.contributors);
                     if (args.some(arg => /^(--write|-w)$/.test(arg))) {
-                        profile.contributors = profile.contributors.map(contributor => {
-                            if (contributor["name"] === repo.user.name) {
-                                contributor["contributions"] += 1;
-                            }
-                            return contributor;
-                        });
                         writeFileSync(target, dump(configs, { indent: 4, quotingType: '"' }), { encoding: "utf8" });
                         switch (platform) {
                             case "win32":
@@ -55,16 +50,6 @@ if (existsSync(target)) {
                                 spawnSync("npx", ["prettier", "--write", target], { cwd });
                                 break;
                         }
-                        log(
-                            profile.contributors.map(contributor => {
-                                if (contributor["name"] === repo.user.name) {
-                                    contributor["contributions"] += " *";
-                                }
-                                return contributor;
-                            })
-                        );
-                    } else {
-                        log(profile.contributors);
                     }
                 }
             }
