@@ -119,6 +119,10 @@ widgets:
             avatar: https://avatars.githubusercontent.com/u/50868054
             link: https://www.garlicgo.com/
             contributions: 15
+          - name: Ghoster
+            avatar: https://avatars.githubusercontent.com/u/43604079
+            link: https://github.com/Ghoster-l
+            
       avatar: /images/logos/2x/icon_center.png
       avatar_rounded: false
       gravatar: null
