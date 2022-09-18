@@ -5,9 +5,18 @@ const { load, dump } = require("js-yaml");
 const { jit } = require("@abysser/jit");
 
 const cwd = process.cwd();
-const args = process.argv.slice(2);
 const { platform } = process;
+const args = process.argv.slice(2);
+const options = Object.assign(
+    { this: false, write: false, add: false },
+    {
+        this: args.some(arg => /^(--this|-t)$/.test(arg)), // whether to reckon this commitment in
+        write: args.some(arg => /^(--write|-w)$/.test(arg)), // whether to write the result back
+        add: args.some(arg => /^(--add|-a)$/.test(arg)), // whether to add target file to the staged
+    }
+);
 const target = resolve(cwd, "./_config.abyrus.yml");
+
 if (existsSync(target)) {
     const { hasOwnProperty, toString: typeOf } = Object.prototype;
     const has = (o, k) => hasOwnProperty.call(o, k);
@@ -26,7 +35,7 @@ if (existsSync(target)) {
                         if (has(sets, curr)) {
                             sets[curr]++;
                         } else {
-                            sets[curr] = 0;
+                            sets[curr] = options.this && repo.user.name === curr ? 1 : 0;
                         }
                         return sets;
                     }, {});
@@ -39,8 +48,7 @@ if (existsSync(target)) {
                             return contributor;
                         })
                         .sort((a, b) => b["contributions"] - a["contributions"] || 0);
-                    log(profile.contributors);
-                    if (args.some(arg => /^(--write|-w)$/.test(arg))) {
+                    if (options.write) {
                         writeFileSync(target, dump(configs, { indent: 4, quotingType: '"' }), { encoding: "utf8" });
                         switch (platform) {
                             case "win32":
@@ -50,7 +58,11 @@ if (existsSync(target)) {
                                 spawnSync("npx", ["prettier", "--write", target], { cwd });
                                 break;
                         }
+                        if (options.add) {
+                            repo.do("add", [target]);
+                        }
                     }
+                    log(profile.contributors);
                 }
             }
         }
