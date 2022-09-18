@@ -7,7 +7,7 @@
     },
     "scripts": {
         "prepare": "husky install",
-        "build": "node scripts/contributors.analyse.js -w && hexo generate",
+        "build": "hexo generate",
         "clean": "hexo clean",
         "deploy": "hexo deploy",
         "serve": "hexo server --debug",

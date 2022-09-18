@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+if [ -e .commit ]
+    then
+        rm -f .commit
+        node scripts/contributors.analyse.js -w -a
+        git commit --amend --no-edit --no-verify
+fi
