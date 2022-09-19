@@ -50,7 +50,7 @@ if (existsSync(target)) {
                             contributor["contributions"] = group ? group.summary : 0;
                             return contributor;
                         })
-                        .sort((a, b) => b["contributions"] - a["contributions"] || 0);
+                        .sort((a, b) => b["contributions"] - a["contributions"]);
                     if (options.write) {
                         writeFileSync(target, dump(configs, { indent: 4, quotingType: '"' }), { encoding: "utf8" });
                         switch (platform) {
