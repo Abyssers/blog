@@ -43,7 +43,7 @@ function isFunc(o) {
 }
 
 function isEmpty(o) {
-    if (isArr(o)) return o.length === 0;
+    if (isArr(o) || isStr(o)) return o.length === 0;
     if (isObj(o)) return isEmpty(Object.keys(o)) === 0;
     return false;
 }
