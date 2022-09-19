@@ -4,6 +4,6 @@
 if [ -e .commit ]
     then
         rm -f .commit
-        node scripts/contributors.analyse.js -w -a
+        npm run analyse -- -w -a
         git commit --amend --no-edit --no-verify
 fi
