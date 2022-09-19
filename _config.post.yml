@@ -1,0 +1,26 @@
+widgets:
+    - position: left
+      type: categories
+    - position: left
+      type: recent_posts
+    - position: left
+      type: archives
+    - position: left
+      type: followit
+      description: null
+      action_url: ""
+      verification_code: ""
+    - position: left
+      type: adsense
+      client_id: ""
+      slot_id: ""
+    - position: right
+      type: toc
+      index: true
+      collapsed: true
+      depth: 6
+    - position: right
+      type: tags
+      order_by: name
+      amount: null
+      show_count: true

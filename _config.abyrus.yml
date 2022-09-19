@@ -114,7 +114,7 @@ widgets:
           - name: Morilence
             avatar: https://avatars.githubusercontent.com/u/44861693
             link: https://github.com/Morilence
-            contributions: 201
+            contributions: 209
           - name: GarlicGo
             avatar: https://avatars.githubusercontent.com/u/50868054
             link: https://www.garlicgo.com/
@@ -144,39 +144,30 @@ widgets:
               icon: fas fa-rss
               url: /
     - position: left
-      type: toc
-      index: true
-      collapsed: true
-      depth: 6
-    - position: left
-      type: links
-      links:
-          Hexo: https://hexo.io
-          Bulma: https://bulma.io
-    - position: left
       type: categories
-    - position: left
-      type: recent_posts
-    - position: left
-      type: archives
     - position: left
       type: tags
       order_by: name
       amount: null
       show_count: true
     - position: left
-      type: subscribe_email
-      description: null
-      feedburner_id: ""
-    - position: left
-      type: adsense
-      client_id: ""
-      slot_id: ""
-    - position: left
       type: followit
       description: null
       action_url: ""
       verification_code: ""
+    - position: left
+      type: links
+      links:
+          Hexo: https://hexo.io
+          Bulma: https://bulma.io
+    - position: right
+      type: recent_posts
+    - position: right
+      type: archives
+    - position: right
+      type: adsense
+      client_id: ""
+      slot_id: ""
 plugins:
     animejs: true
     back_to_top: true
