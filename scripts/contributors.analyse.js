@@ -22,25 +22,35 @@ if (existsSync(target)) {
             const profile = configs.widgets[idx];
             if (profile?.contributors && isArr(profile.contributors)) {
                 const repo = jit.repo(resolve(cwd));
-                const { formatted } = repo.do("log", ["--pretty=format:%an"]);
+                const { formatted } = repo.do("shortlog", ["HEAD", "-sne"]);
                 if (formatted) {
-                    const commits = formatted.reduce((sets, curr) => {
-                        if (hasOwn(sets, curr)) {
-                            sets[curr]++;
-                        } else {
-                            sets[curr] = 1;
-                        }
-                        return sets;
-                    }, {});
+                    /* groups: { keys: string[]; summary: number; }[] */
+                    const groups = formatted.reduce((groups, contributor) => {
+                        let flag = false;
+                        const { name, email, summary } = contributor;
+                        const ghname = /(^\d+\+)?\S+@users.noreply.github.com$/.test(email)
+                            ? email.replace(/^\d+\+/, "").replace(/@users.noreply.github.com$/, "")
+                            : undefined;
+                        const keys = [name, email, ...(ghname ? [ghname] : [])];
+                        groups = groups.map(group => {
+                            if (group.keys.some(k => keys.includes(k))) {
+                                group.keys = [...new Set([...group.keys, ...keys])];
+                                group.summary += summary;
+                                flag = true;
+                            }
+                            return group;
+                        });
+                        if (!flag) groups.push({ keys, summary });
+                        return groups;
+                    }, []);
                     profile.contributors = profile.contributors
                         .filter(contributor => isObj(contributor) && hasOwn(contributor, "name"))
                         .map(contributor => {
-                            contributor["contributions"] = Object.keys(commits).includes(contributor["name"])
-                                ? commits[contributor["name"]]
-                                : 0;
+                            const group = groups.find(group => group.keys.includes(contributor["name"]));
+                            contributor["contributions"] = group ? group.summary : 0;
                             return contributor;
                         })
-                        .sort((a, b) => b["contributions"] - a["contributions"] || 0);
+                        .sort((a, b) => b["contributions"] - a["contributions"]);
                     if (options.write) {
                         writeFileSync(target, dump(configs, { indent: 4, quotingType: '"' }), { encoding: "utf8" });
                         switch (platform) {
