@@ -3,6 +3,7 @@ const { existsSync, readFileSync, writeFileSync } = require("node:fs");
 const { spawnSync } = require("node:child_process");
 const { load, dump } = require("js-yaml");
 const { jit } = require("@abysser/jit");
+const { isObj, isArr, hasOwn } = require("./utils");
 
 const cwd = process.cwd();
 const { platform } = process;
@@ -18,10 +19,6 @@ const options = Object.assign(
 const target = resolve(cwd, "./_config.abyrus.yml");
 
 if (existsSync(target)) {
-    const { hasOwnProperty, toString: typeOf } = Object.prototype;
-    const has = (o, k) => hasOwnProperty.call(o, k);
-    const isObj = o => typeOf.call(o) === "[object Object]";
-    const isArr = o => typeOf.call(o) === "[object Array]";
     const configs = load(readFileSync(target, { encoding: "utf8" }));
     if (isObj(configs) && configs?.widgets && isArr(configs.widgets)) {
         const idx = configs.widgets.findIndex(widget => widget?.type === "profile");
@@ -32,7 +29,7 @@ if (existsSync(target)) {
                 const { formatted } = repo.do("log", ["--pretty=format:%an"]);
                 if (formatted) {
                     const commits = formatted.reduce((sets, curr) => {
-                        if (has(sets, curr)) {
+                        if (hasOwn(sets, curr)) {
                             sets[curr]++;
                         } else {
                             sets[curr] = options.this && repo.user.name === curr ? 1 : 0;
@@ -40,7 +37,7 @@ if (existsSync(target)) {
                         return sets;
                     }, {});
                     profile.contributors = profile.contributors
-                        .filter(contributor => isObj(contributor) && has(contributor, "name"))
+                        .filter(contributor => isObj(contributor) && hasOwn(contributor, "name"))
                         .map(contributor => {
                             contributor["contributions"] = Object.keys(commits).includes(contributor["name"])
                                 ? commits[contributor["name"]]
