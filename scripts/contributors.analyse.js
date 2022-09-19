@@ -8,14 +8,10 @@ const { isObj, isArr, hasOwn } = require("./utils");
 const cwd = process.cwd();
 const { platform } = process;
 const args = process.argv.slice(2);
-const options = Object.assign(
-    { this: false, write: false, add: false },
-    {
-        this: args.some(arg => /^(--this|-t)$/.test(arg)), // whether to reckon this commitment in
-        write: args.some(arg => /^(--write|-w)$/.test(arg)), // whether to write the result back
-        add: args.some(arg => /^(--add|-a)$/.test(arg)), // whether to add target file to the staged
-    }
-);
+const options = {
+    write: args.some(arg => /^(--write|-w)$/.test(arg)), // whether to write the result back
+    add: args.some(arg => /^(--add|-a)$/.test(arg)), // whether to add target file to the staged
+};
 const target = resolve(cwd, "./_config.abyrus.yml");
 
 if (existsSync(target)) {
@@ -32,7 +28,7 @@ if (existsSync(target)) {
                         if (hasOwn(sets, curr)) {
                             sets[curr]++;
                         } else {
-                            sets[curr] = options.this && repo.user.name === curr ? 1 : 0;
+                            sets[curr] = 1;
                         }
                         return sets;
                     }, {});

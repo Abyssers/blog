@@ -42,6 +42,12 @@ function isFunc(o) {
     return typeof o === "function" && !isNum(o.nodeType);
 }
 
+function isEmpty(o) {
+    if (isArr(o)) return o.length === 0;
+    if (isObj(o)) return isEmpty(Object.keys(o)) === 0;
+    return false;
+}
+
 function isNull(o) {
     return o === null;
 }
@@ -54,22 +60,40 @@ function isNil(o) {
     return isNull(o) || isUndef(o);
 }
 
-function isInstOf(o, C) {
-    if (isNil(o) && !isFunc(C)) return false;
+function isInstOf(o, Class) {
+    if (isNil(o) && !isFunc(Class)) return false;
     let proto = Object.getPrototypeOf(o);
     while (true) {
         if (!proto) return false;
-        if (proto === C.prototype) return true;
+        if (proto === Class.prototype) return true;
         proto = Object.getPrototypeOf(o);
     }
 }
 
-function has(o, k) {
-    return k in Object(o);
+function has(o, ...keys) {
+    return keys.every(k => k in Object(o));
 }
 
-function hasOwn(o, k) {
-    return !isNil(o) && Object.prototype.hasOwnProperty.call(o, k);
+function hasOwn(o, ...keys) {
+    return !isNil(o) && keys.every(k => Object.prototype.hasOwnProperty.call(o, k));
+}
+
+function fisrtOf(o) {
+    if (isArr(o)) return o[0];
+    if (isStr(o)) return o.at(0);
+    return undefined;
+}
+
+function lastOf(o) {
+    if (isArr(o)) return o[o.length - 1];
+    if (isStr(o)) return o.at(o.length - 1);
+    return undefined;
+}
+
+function randomOf(o) {
+    if (isArr(o)) return o[Math.floor(Math.random() * o.length)];
+    if (isStr(o)) return randomOf(o.split(""));
+    return undefined;
 }
 
 module.exports = {
@@ -81,6 +105,7 @@ module.exports = {
     isObj,
     isArr,
     isFunc,
+    isEmpty,
     isNull,
     isUndef,
     isNil,
@@ -88,4 +113,8 @@ module.exports = {
     /* Property Checking */
     has,
     hasOwn,
+    /* Element Getter */
+    fisrtOf,
+    lastOf,
+    randomOf,
 };
