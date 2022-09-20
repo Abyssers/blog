@@ -8,7 +8,7 @@ const { isAbsolute, sep } = require("path");
 function isInvokedByHexo() {
     const hexoPaths = ["hexo-cli/bin/hexo", "node_modules/.bin/hexo"];
     const invoker = process.argv[1].split(sep).slice(-3).join("/");
-    return isAbsolute(process.argv[1]) && hexoInvokedPaths.includes(invoker);
+    return isAbsolute(process.argv[1]) && hexoPaths.includes(invoker);
 }
 
 function isNum(o) {
