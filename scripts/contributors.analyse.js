@@ -3,7 +3,9 @@ const { existsSync, readFileSync, writeFileSync } = require("node:fs");
 const { spawnSync } = require("node:child_process");
 const { load, dump } = require("js-yaml");
 const { jit } = require("@abysser/jit");
-const { isObj, isArr, hasOwn } = require("./utils");
+const { isInvokedByHexo, isObj, isArr, hasOwn } = require("./utils");
+
+if (isInvokedByHexo()) return;
 
 const cwd = process.cwd();
 const { platform } = process;
