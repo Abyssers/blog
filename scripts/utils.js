@@ -1,5 +1,14 @@
 "use strict";
 
+const { isAbsolute, sep } = require("path");
+
+/**
+ * Determine whether the script is executed by the user or invoked by hexo
+ */
+function isInvokedByHexo() {
+    return isAbsolute(process.argv[1]) && process.argv[1].split(sep).slice(-3).join("/") === "hexo-cli/bin/hexo";
+}
+
 function isNum(o) {
     /**
      * To Avoid:
@@ -97,6 +106,7 @@ function randomOf(o) {
 }
 
 module.exports = {
+    isInvokedByHexo,
     /* Type Checking */
     isNum,
     isInt,
