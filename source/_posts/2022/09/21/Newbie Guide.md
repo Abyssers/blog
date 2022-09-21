@@ -8,7 +8,7 @@ contributors:
     email: 1280659615@qq.com
     contributions: 1
 updatedby: Morilence
-updated: 2022-09-21T13:37:14.349Z
+updated: 2022-09-21T16:25:18.000Z
 ---
 
 本文仅为准备参与该博客项目的成员提供工作流程与规范上的指导。
@@ -24,6 +24,8 @@ updated: 2022-09-21T13:37:14.349Z
 ```sh
 git clone --recurse-submodules <fork_url>
 ```
+
+> 注：请务必带上 \-\-recurse-submodules 参数以确保主题模块能够被正常签出
 
 为了使您在本地开发时更方便地与源仓库保持同步，我们建议在本地新增一个远程/上游（upstream）来指向源仓库：
 
@@ -60,6 +62,14 @@ upstream    git@github.com:<your_name>/blog.git (push)
 
 > 问：为啥不直接改默认上游（origin）的 fetch URL？
 > 答：因为 git 不支持，git remote set-url 没有 \-\-fetch 选项，所以只能采用新建源仓库指向的上游继而改其 push URL 的方案。
+
+另外，在后续开发/创作过程中，随着主题模块（子模块）的不断更新，仅仅 git pull 是无法将最新版本的主题文件更新到本地的，但我们所有的主题变更都只在主题仓库进行提交，因此对于博客仓库，您只需要强制拉取最新版本的主题模块覆盖本地：
+
+```sh
+git submodule update --init --remote --force
+```
+
+> 注：您也不必担心在强制更新本地主题后出现与源仓库所引用主题版本不一致的问题，Abyrus 的一切更新将通过 Github Actions 自动为博客仓库发起更新主题模块的 Pull Request 请求，所以只需及时拉取最新代码到本地即可。
 
 [blog_repo_url]: https://github.com/Abyssers/blog
 [abyrus_repo_url]: https://github.com/Abyssers/abyrus
