@@ -1,6 +1,6 @@
 {
     "blankLines": 1,
-    "force": true,
+    "force": false,
     "now": false,
     "write": true,
     "map": {
