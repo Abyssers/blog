@@ -3,7 +3,7 @@ const { existsSync, readFileSync, writeFileSync } = require("node:fs");
 const { spawnSync } = require("node:child_process");
 const { load, dump } = require("js-yaml");
 const { jit } = require("@abysser/jit");
-const { isInvokedByHexo, isObj, isArr, hasOwn } = require("./utils");
+const { isInvokedByHexo, isObj, isArr, hasOwn, isEmpty, intersectionOf, unionOf } = require("./utils");
 
 if (isInvokedByHexo()) return;
 
@@ -35,8 +35,8 @@ if (existsSync(target)) {
                             : undefined;
                         const keys = [name, email, ...(ghname ? [ghname] : [])];
                         groups = groups.map(group => {
-                            if (group.keys.some(k => keys.includes(k))) {
-                                group.keys = [...new Set([...group.keys, ...keys])];
+                            if (!isEmpty(intersectionOf(group.keys, keys))) {
+                                group.keys = unionOf(group.keys, keys);
                                 group.summary += summary;
                                 flag = true;
                             }
