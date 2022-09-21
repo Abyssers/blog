@@ -37,7 +37,7 @@
     },
     "devDependencies": {
         "@abysser/jit": "^1.3.10",
-        "@abysser/matter-lint": "^1.2.7",
+        "@abysser/matter-lint": "^1.2.8",
         "@babel/core": "^7.18.10",
         "@babel/eslint-parser": "^7.18.9",
         "@commitlint/cli": "^17.0.3",
