@@ -6,9 +6,8 @@ const { isAbsolute, sep } = require("path");
  * Determine whether the script is executed by the user or invoked by hexo
  */
 function isInvokedByHexo() {
-    const hexoPaths = ["hexo-cli/bin/hexo", "node_modules/.bin/hexo"];
     const invoker = process.argv[1].split(sep).slice(-3).join("/");
-    return isAbsolute(process.argv[1]) && hexoPaths.includes(invoker);
+    return isAbsolute(process.argv[1]) && ["hexo-cli/bin/hexo", "node_modules/.bin/hexo"].includes(invoker);
 }
 
 function isNum(o) {
