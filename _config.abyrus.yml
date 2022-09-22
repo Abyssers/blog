@@ -114,7 +114,7 @@ widgets:
           - name: Morilence
             avatar: https://avatars.githubusercontent.com/u/44861693
             link: https://github.com/Morilence
-            contributions: 248
+            contributions: 249
           - name: GarlicGo
             avatar: https://avatars.githubusercontent.com/u/50868054
             link: https://github.com/GarlicGo
@@ -123,6 +123,10 @@ widgets:
             avatar: https://avatars.githubusercontent.com/u/43604079
             link: https://github.com/Ghoster-l
             contributions: 1
+          - name: Slanceli
+            avatar: https://avatars.githubusercontent.com/u/43295293
+            link: https://github.com/slanceli/
+            contributions: 0
       avatar: /images/logos/2x/icon_center.png
       avatar_rounded: false
       gravatar: null
