@@ -4,7 +4,7 @@ const { spawnSync } = require("node:child_process");
 const { program } = require("commander");
 const { load, dump } = require("js-yaml");
 const { isObj, isArr } = require("./utils");
-const { isInvokedByHexo, getRepo, getContributors } = require("./service");
+const { isInvokedByHexo, getRoot, getRepo, getContributors } = require("./service");
 
 if (!isInvokedByHexo()) {
     program
@@ -12,10 +12,9 @@ if (!isInvokedByHexo()) {
         .option("-a, --add", "whether to add target file to the staged", false)
         .parse(process.argv);
 
-    const cwd = process.cwd();
     const opts = program.opts();
     const { platform } = process;
-    const target = resolve(cwd, "./_config.abyrus.yml");
+    const target = resolve(getRoot(), "_config.abyrus.yml");
 
     if (existsSync(target)) {
         const cfgs = load(readFileSync(target, { encoding: "utf8" }));
@@ -28,10 +27,10 @@ if (!isInvokedByHexo()) {
             writeFileSync(target, dump(cfgs, { indent: 4, quotingType: '"' }), { encoding: "utf8" });
             switch (platform) {
                 case "win32":
-                    spawnSync("npx.cmd", ["prettier", "--write", target], { cwd });
+                    spawnSync("npx.cmd", ["prettier", "--write", target], { cwd: getRoot() });
                     break;
                 default:
-                    spawnSync("npx", ["prettier", "--write", target], { cwd });
+                    spawnSync("npx", ["prettier", "--write", target], { cwd: getRoot() });
                     break;
             }
             if (opts.add) {
