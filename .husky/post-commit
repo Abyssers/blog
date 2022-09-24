@@ -3,6 +3,7 @@
 
 if [ -e .commit ]
     then
+        node scripts/matter.lint.js --staged -w -a
         rm -f .commit
         npm run analyse -- -w -a
         git commit --amend --no-edit --no-verify
