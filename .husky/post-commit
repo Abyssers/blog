@@ -3,7 +3,8 @@
 
 if [ -e .commit ]
     then
-        rm -f .commit
+        npm run matterlint -- --staged -a
         npm run analyse -- -w -a
+        rm -f .commit
         git commit --amend --no-edit --no-verify
 fi
