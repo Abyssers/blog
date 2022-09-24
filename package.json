@@ -11,7 +11,7 @@
         "clean": "hexo clean",
         "deploy": "hexo deploy",
         "serve": "hexo server --debug",
-        "lint": "eslint --fix --ext .js scripts/ && node scripts/matter.lint.js --map created:date source/ && prettier --write .",
+        "lint": "eslint --fix --ext .js scripts/ && node scripts/matter.lint.js --map created:date -w source/ && prettier --write .",
         "analyse": "node scripts/contributors.analyse.js"
     },
     "hexo": {
