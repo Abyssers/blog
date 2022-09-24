@@ -8,6 +8,14 @@ tags:
     - Drone
 categories:
     - CI/CD
+contributors:
+    - name: slanceli
+      avatar: "https://avatars.githubusercontent.com/u/43295293"
+      link: "https://github.com/slanceli/"
+      contributions: 1
+updatedby: slanceli
+updated: 2022-09-24T03:46:41.000Z
+created: 2022-09-24T03:46:41.000Z
 ---
 
 使用 Drone 实现自动化部署。
