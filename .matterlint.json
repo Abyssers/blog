@@ -1,9 +1,0 @@
-{
-    "blankLines": 1,
-    "force": false,
-    "now": false,
-    "write": true,
-    "map": {
-        "created": "date"
-    }
-}

@@ -11,6 +11,7 @@
         "clean": "hexo clean",
         "deploy": "hexo deploy",
         "serve": "hexo server --debug",
+        "lint": "eslint --fix --ext .js scripts/ && node scripts/matter.lint.js --map created:date source/ && prettier --write .",
         "analyse": "node scripts/contributors.analyse.js"
     },
     "hexo": {
@@ -37,14 +38,15 @@
     },
     "devDependencies": {
         "@abysser/jit": "^1.3.10",
-        "@abysser/matter-lint": "^1.2.8",
         "@babel/core": "^7.18.10",
         "@babel/eslint-parser": "^7.18.9",
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
+        "commander": "^9.4.0",
         "eslint": "^8.22.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-prettier": "^4.2.1",
+        "gray-matter": "^4.0.3",
         "husky": "^8.0.1",
         "js-yaml": "^4.1.0",
         "lint-staged": "^13.0.3",

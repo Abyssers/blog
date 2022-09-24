@@ -4,7 +4,6 @@ on:
         types:
             - abyrus-updated
             - jit-updated
-            - matter-lint-updated
 jobs:
     abyrus:
         if: ${{ github.event.action == 'abyrus-updated' }}
@@ -66,39 +65,6 @@ jobs:
                   branch: ci/updates/jit
                   delete-branch: true
                   title: "chore: updated jit to ${{ github.event.client_payload.version }}"
-                  labels: auto
-                  team-reviewers: |
-                      owners
-                      developers
-                  draft: false
-
-    matter-lint:
-        if: ${{ github.event.action == 'matter-lint-updated' }}
-        runs-on: ubuntu-latest
-        environment: ABYSSERS_UPDATE_ENV
-        steps:
-            - name: "[Print Payloads]"
-              run: |
-                  echo "ref: ${{ github.event.client_payload.ref }}"
-                  echo "sha: ${{ github.event.client_payload.sha }}"
-                  echo "changes: ${{ github.event.client_payload.changes }}"
-                  echo "version: ${{ github.event.client_payload.version }}"
-            - name: "[Download Repo]"
-              uses: actions/checkout@v2
-              with:
-                  ref: main
-                  token: ${{ secrets.MORILENCE_GENERAL_PAT }}
-            - name: "[Update the Version of @abysser/matter-lint]"
-              run: npm install @abysser/matter-lint@latest -D
-            - name: "[Create Pull Request]"
-              uses: peter-evans/create-pull-request@v4
-              with:
-                  token: ${{ secrets.MORILENCE_GENERAL_PAT }}
-                  base: main
-                  commit-message: "chore: updated matter-lint to ${{ github.event.client_payload.version }}"
-                  branch: ci/updates/matter-lint
-                  delete-branch: true
-                  title: "chore: updated matter-lint to ${{ github.event.client_payload.version }}"
                   labels: auto
                   team-reviewers: |
                       owners
