@@ -1,5 +1,5 @@
 ---
-title: {{ title }}
-date: {{ date }}
-tags:
+title: { { title } }
+toc: true
+date: { { date } }
 ---
