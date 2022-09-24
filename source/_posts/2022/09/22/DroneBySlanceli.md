@@ -12,14 +12,13 @@ contributors:
     - name: Morilence
       avatar: "https://avatars.githubusercontent.com/u/44861693"
       link: "https://github.com/Morilence"
-      contributions: 2
+      contributions: 4
     - name: slanceli
       avatar: "https://avatars.githubusercontent.com/u/43295293"
       link: "https://github.com/slanceli/"
       contributions: 1
 updatedby: Morilence
-updated: 2022-09-24T05:40:38.000Z
-created: 2022-09-24T03:46:41.000Z
+updated: 2022-09-24T05:57:28.000Z
 ---
 
 使用 Drone 实现自动化部署。
