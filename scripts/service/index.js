@@ -13,8 +13,20 @@ function isInvokedByHexo() {
     return isAbsolute(process.argv[1]) && process.argv[1].split(sep).slice(-2).join("/").endsWith("bin/hexo");
 }
 
+function getRoot() {
+    return resolve(__dirname, "../../");
+}
+
 function getRepo() {
-    return jit.repo(resolve(__dirname, "../../"));
+    return jit.repo(getRoot());
+}
+
+function getChangedPaths() {
+    return (getRepo().do("diff", ["--name-only"]).formatted || []).map(path => resolve(getRoot(), path));
+}
+
+function getStagedPaths() {
+    return (getRepo().do("diff", ["--cached", "--name-only"]).formatted || []).map(path => resolve(getRoot(), path));
 }
 
 /**
@@ -23,7 +35,7 @@ function getRepo() {
  * @return {any[]} contributors of the path (return contributors of all the repo if path is undefined)
  */
 function getContributors(path = undefined) {
-    const configPath = resolve(__dirname, "../../_config.abyrus.yml");
+    const configPath = resolve(getRoot(), "_config.abyrus.yml");
     if (!existsSync(configPath)) return;
     const cfgs = load(readFileSync(configPath, { encoding: "utf8" }));
     if (!isObj(cfgs) || !cfgs?.widgets || !isArr(cfgs.widgets)) return [];
@@ -66,6 +78,9 @@ function getContributors(path = undefined) {
 
 module.exports = {
     isInvokedByHexo,
+    getRoot,
     getRepo,
+    getChangedPaths,
+    getStagedPaths,
     getContributors,
 };
