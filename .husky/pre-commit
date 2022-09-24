@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+git diff --cached --name-only > .commit
 npx lint-staged
-touch .commit
