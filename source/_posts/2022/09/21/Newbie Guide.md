@@ -6,12 +6,14 @@ date: 2022-09-21T12:59:39.000Z
 contributors:
   - name: Morilence
     email: 1280659615@qq.com
-    contributions: 1
+    contributions: 2
 updatedby: Morilence
-updated: 2022-09-21T16:25:18.000Z
+updated: 2022-09-21T16:53:24.000Z
 ---
 
 本文仅为准备参与该博客项目的成员提供工作流程与规范上的指导。
+
+<!-- more -->
 
 ## 简介
 
