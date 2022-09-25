@@ -2,12 +2,19 @@
 title: 【Abysser工程化实践】Git工作流规范
 toc: true
 author: GarlicGo
-date: 2022-09-25 16:12:34
+date: 2022-09-25T16:12:34.000Z
 tags:
     - 工程化
     - Git
 categories:
     - 工程化
+contributors:
+    - name: GarlicGo
+      avatar: "https://avatars.githubusercontent.com/u/50868054"
+      link: "https://github.com/GarlicGo"
+      contributions: 5
+updatedby: GarlicGo
+updated: 2022-09-25T15:57:28.000Z
 ---
 
 本文为准备参与 Abyssers' blog 建设的成员提供 Git 工作流规范上的指导。
@@ -16,7 +23,7 @@ categories:
 
 # Git 工作流简介
 
-Git 作为一个强大的代码管理工具，提供了丰富的分支策略和工作流方式，一直以来都是各大互联网企业的首选。在业界，Git 工作流有很多种，包括 Git Flow、GitHub Flow、GitLab Flow、Trunk-based Flow 等。在某些情况下现有工作流无法满足公司或团队的研发需求，这时就需要结合团队研发现状，充分考虑现有工作流程中的上下游系统，制定出与团队更加匹的工作流。
+Git 作为一个强大的代码管理工具，提供了丰富的分支策略和工作流方式，一直以来都是各大互联网企业的首选。在业界，Git 工作流有很多种，包括 Git Flow、GitHub Flow、GitLab Flow 等。在某些情况下现有工作流无法满足公司或团队的研发需求，这时就需要结合团队研发现状，充分考虑现有工作流程中的上下游系统，制定出与团队更加匹的工作流。
 
 # 常见 Git 工作流
 
