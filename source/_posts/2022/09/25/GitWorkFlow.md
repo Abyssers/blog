@@ -10,21 +10,21 @@ categories:
     - 工程化
 ---
 
-本文为准备参与Abyssers' blog建设的成员提供Git工作流规范上的指导。
+本文为准备参与 Abyssers' blog 建设的成员提供 Git 工作流规范上的指导。
 
 <!-- more -->
 
-# Git工作流简介
+# Git 工作流简介
 
-Git 作为一个强大的代码管理工具，提供了丰富的分支策略和工作流方式，一直以来都是各大互联网企业的首选。在业界，Git工作流有很多种，包括 Git Flow、GitHub Flow、GitLab Flow 等。在某些情况下现有工作流无法满足公司或团队的研发需求，这时就需要结合团队研发现状，充分考虑现有工作流程中的上下游系统，制定出与团队更加匹的工作流。
+Git 作为一个强大的代码管理工具，提供了丰富的分支策略和工作流方式，一直以来都是各大互联网企业的首选。在业界，Git 工作流有很多种，包括 Git Flow、GitHub Flow、GitLab Flow、Trunk-based Flow 等。在某些情况下现有工作流无法满足公司或团队的研发需求，这时就需要结合团队研发现状，充分考虑现有工作流程中的上下游系统，制定出与团队更加匹的工作流。
 
-# 常见Git工作流
+# 常见 Git 工作流
 
 ## Git Flow
 
 ![][git-flow]
 
-Git Flow开发模型从源代码管理角度对通常意义上的软件开发活动进行了约束。应该说，为我们的软件开发提供了一个可供参考的管理模型。Git Flow开发模型让nvie的开发代码仓库保持整洁，让小组各个成员之间的开发相互隔离，能够有效避免处于开发状态中的代码相互影响而导致的效率低下和混乱。
+Git Flow 开发模型从源代码管理角度对通常意义上的软件开发活动进行了约束。应该说，为我们的软件开发提供了一个可供参考的管理模型。Git Flow 开发模型让 nvie 的开发代码仓库保持整洁，让小组各个成员之间的开发相互隔离，能够有效避免处于开发状态中的代码相互影响而导致的效率低下和混乱。
 
 ## GitHub Flow
 
@@ -38,7 +38,7 @@ GitHub Flow 是一个相对简单的分支模型，它没有 Git Flow 或是 Git
 
 GitLab Flow 并不像 Git Flow, GitHub Flow 一样具有明显的规范，它更多是在 GitHub Flow 基础上，综合考虑环境部署、项目管理等问题而得出的一种实践。
 
-# Abyssers' blog工作流实践（规范建议）
+# Abyssers' blog 工作流实践（规范建议）
 
 本节认为您已经参考 [初入指南][newbie-guide] 将组织仓库 fork 至个人 GitHub 账户，并 clone 至本地。
 
@@ -60,7 +60,7 @@ git checkout -b <开发分支名称>
 
 ## 提交并推送至 fork 仓库
 
-当开发工作完成，需要将更新推送并合并时，不要直接推送至组织仓库，应该推送至自己的 fork 仓库，再通过 PR 提交至组织仓库。在推送至自己的  fork 仓库时首先需要检查 main 分支是否有更新，如果此时有更新需要首先对 fork 仓库进行同步，并将本地代码进行暂存：
+当开发工作完成，需要将更新推送并合并时，不要直接推送至组织仓库，应该推送至自己的 fork 仓库，再通过 PR 提交至组织仓库。在推送至自己的 fork 仓库时首先需要检查 main 分支是否有更新，如果此时有更新需要首先对 fork 仓库进行同步，并将本地代码进行暂存：
 
 ```bash
 git add .
@@ -96,13 +96,10 @@ git push --set-upstream origin <开发分支名称>
 
 在你的 PR 通过后，你这次的任务就算是完成了，最后要注意的一点就是别忘了同步 main 分支代码，首先在 fork 仓库对分支进行同步，之后在本地将分支切换至 main 分支再使用 pull 同步最新代码。
 
-
 [newbie-guide]: /blog/2022-09-21-Newbie-Guide/
-
 [branch-sync]: ./2022-09-25-GitWorkFlow/branch-sync.png
 [pr]: ./2022-09-25-GitWorkFlow/pr.png
 [git-flow]: ./2022-09-25-GitWorkFlow/git-flow.webp
 [github-flow]: ./2022-09-25-GitWorkFlow/github-flow.png
 [gitlab-flow]: ./2022-09-25-GitWorkFlow/gitlab-flow.png
-
 [git-stash]: https://git-scm.com/docs/git-stash
