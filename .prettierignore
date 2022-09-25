@@ -1,5 +1,7 @@
 node_modules/
+public/
 themes/
+scaffolds/
 !.eslintrc.js
 !.prettierrc.js
 !.lintstagedrc.js

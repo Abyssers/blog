@@ -1,76 +1,43 @@
 const { resolve } = require("node:path");
 const { existsSync, readFileSync, writeFileSync } = require("node:fs");
 const { spawnSync } = require("node:child_process");
+const { program } = require("commander");
 const { load, dump } = require("js-yaml");
-const { jit } = require("@abysser/jit");
-const { isInvokedByHexo, isObj, isArr, hasOwn } = require("./utils");
+const { isObj, isArr } = require("./utils");
+const { isInvokedByHexo, getRoot, getRepo, getContributors } = require("./service");
 
-if (isInvokedByHexo()) return;
+if (!isInvokedByHexo()) {
+    program
+        .option("-w, --write", "whether to write the result back", false)
+        .option("-a, --add", "whether to add target file to the staged", false)
+        .parse(process.argv);
 
-const cwd = process.cwd();
-const { platform } = process;
-const args = process.argv.slice(2);
-const options = {
-    write: args.some(arg => /^(--write|-w)$/.test(arg)), // whether to write the result back
-    add: args.some(arg => /^(--add|-a)$/.test(arg)), // whether to add target file to the staged
-};
-const target = resolve(cwd, "./_config.abyrus.yml");
+    const opts = program.opts();
+    const { platform } = process;
+    const target = resolve(getRoot(), "_config.abyrus.yml");
 
-if (existsSync(target)) {
-    const configs = load(readFileSync(target, { encoding: "utf8" }));
-    if (isObj(configs) && configs?.widgets && isArr(configs.widgets)) {
-        const idx = configs.widgets.findIndex(widget => widget?.type === "profile");
-        if (idx !== -1) {
-            const profile = configs.widgets[idx];
-            if (profile?.contributors && isArr(profile.contributors)) {
-                const repo = jit.repo(resolve(cwd));
-                const { formatted } = repo.do("shortlog", ["HEAD", "-sne"]);
-                if (formatted) {
-                    /* groups: { keys: string[]; summary: number; }[] */
-                    const groups = formatted.reduce((groups, contributor) => {
-                        let flag = false;
-                        const { name, email, summary } = contributor;
-                        const ghname = /(^\d+\+)?\S+@users.noreply.github.com$/.test(email)
-                            ? email.replace(/^\d+\+/, "").replace(/@users.noreply.github.com$/, "")
-                            : undefined;
-                        const keys = [name, email, ...(ghname ? [ghname] : [])];
-                        groups = groups.map(group => {
-                            if (group.keys.some(k => keys.includes(k))) {
-                                group.keys = [...new Set([...group.keys, ...keys])];
-                                group.summary += summary;
-                                flag = true;
-                            }
-                            return group;
-                        });
-                        if (!flag) groups.push({ keys, summary });
-                        return groups;
-                    }, []);
-                    profile.contributors = profile.contributors
-                        .filter(contributor => isObj(contributor) && hasOwn(contributor, "name"))
-                        .map(contributor => {
-                            const group = groups.find(group => group.keys.includes(contributor["name"]));
-                            contributor["contributions"] = group ? group.summary : 0;
-                            return contributor;
-                        })
-                        .sort((a, b) => b["contributions"] - a["contributions"]);
-                    if (options.write) {
-                        writeFileSync(target, dump(configs, { indent: 4, quotingType: '"' }), { encoding: "utf8" });
-                        switch (platform) {
-                            case "win32":
-                                spawnSync("npx.cmd", ["prettier", "--write", target], { cwd });
-                                break;
-                            default:
-                                spawnSync("npx", ["prettier", "--write", target], { cwd });
-                                break;
-                        }
-                        if (options.add) {
-                            repo.do("add", [target]);
-                        }
-                    }
-                    log(profile.contributors);
-                }
+    if (existsSync(target)) {
+        const cfgs = load(readFileSync(target, { encoding: "utf8" }));
+        if (!isObj(cfgs) || !cfgs?.widgets || !isArr(cfgs.widgets)) return;
+        const profile = cfgs.widgets.find(widget => widget?.type === "profile");
+        if (!profile?.contributors || !isArr(profile.contributors)) return;
+
+        profile.contributors = getContributors();
+        if (opts.write) {
+            writeFileSync(target, dump(cfgs, { indent: 4, quotingType: '"' }), { encoding: "utf8" });
+            switch (platform) {
+                case "win32":
+                    spawnSync("npx.cmd", ["prettier", "--write", target], { cwd: getRoot() });
+                    break;
+                default:
+                    spawnSync("npx", ["prettier", "--write", target], { cwd: getRoot() });
+                    break;
+            }
+            if (opts.add) {
+                getRepo().do("add", [target]);
             }
         }
+        log(profile.contributors);
     }
 }
 

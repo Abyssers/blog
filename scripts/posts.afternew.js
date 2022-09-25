@@ -1,4 +1,4 @@
-const { isInvokedByHexo } = require("./utils");
+const { isInvokedByHexo } = require("./service");
 
 if (isInvokedByHexo()) {
     // ...

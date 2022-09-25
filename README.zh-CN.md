@@ -39,13 +39,13 @@ git submodule update --init --remote --force
 
 ```sh
 # with npm
-npm install 
+npm install
 
 # with yarn 1.x
 yarn install
 ```
 
-> 时刻关注我们的PR并及时更新依赖。
+> 时刻关注我们的 PR 并及时更新依赖。
 
 最后，确认已经启用 husky ：
 
