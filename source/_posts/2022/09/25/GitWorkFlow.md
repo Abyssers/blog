@@ -10,7 +10,7 @@ categories:
     - 工程化
 ---
 
-本文为准备参与Abyssers‘ blog建设的成员提供Git工作流规范上的指导。
+本文为准备参与Abyssers' blog建设的成员提供Git工作流规范上的指导。
 
 <!-- more -->
 
