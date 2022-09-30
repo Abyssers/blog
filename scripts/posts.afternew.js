@@ -12,7 +12,7 @@ function archive(src) {
             if (isEmpty) rmdirSync(fileSrc);
             return;
         }
-        if (extname(fileName) === ".md") {
+        if ([".md", ".markdown"].includes(extname(fileName))) {
             const {
                 data: { date },
             } = read(fileSrc);
