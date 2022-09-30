@@ -4,7 +4,7 @@ const { read } = require("gray-matter");
 const { isInvokedByHexo, getRoot } = require("./service");
 
 // 归档
-const archive = src => {
+function archive(src) {
     readdirSync(src).forEach(fileName => {
         const fileSrc = resolve(src, fileName);
         if (statSync(fileSrc).isDirectory()) {
@@ -20,7 +20,7 @@ const archive = src => {
             const year = String(date.getUTCFullYear());
             const month = "0" + (date.getUTCMonth() + 1);
             const day = "0" + date.getUTCDate();
-            shear(
+            move(
                 fileName,
                 src,
                 resolve(
@@ -35,10 +35,10 @@ const archive = src => {
         }
     });
     return readdirSync(src).length === 0;
-};
+}
 
 // 剪切一个文件到指定文件夹
-const shear = (fileName, src, dest) => {
+function move(fileName, src, dest) {
     const srcFile = resolve(src, fileName);
     const destFile = resolve(dest, fileName);
     if (!existsSync(dest)) mkdirSync(dest, { recursive: true });
@@ -49,7 +49,7 @@ const shear = (fileName, src, dest) => {
 
     // 如果剪切完成后的文件夹为空，则删除该文件夹
     // if (readdirSync(resolve(src)).length === 0) rmdirSync(src);
-};
+}
 
 if (isInvokedByHexo()) {
     return;
