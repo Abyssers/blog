@@ -5,7 +5,6 @@ const { isInvokedByHexo, getRoot } = require("./service");
 
 // 归档
 const archive = src => {
-    console.log("forceArchive RUNNING");
     readdirSync(src).forEach(fileName => {
         const fileSrc = resolve(src, fileName);
         if (statSync(fileSrc).isDirectory()) {
