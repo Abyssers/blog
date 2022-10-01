@@ -14,6 +14,7 @@
         "eslint": "eslint --fix --ext .js scripts/",
         "prettier": "prettier --write .",
         "matterlint": "node scripts/matter.lint.js --map created:date --includes source/ --write",
+        "archive": "node ./scripts/posts.afternew.js  ",
         "lint": "npm run eslint && npm run matterlint -- source/ && npm run prettier",
         "analyse": "node scripts/contributors.analyse.js"
     },

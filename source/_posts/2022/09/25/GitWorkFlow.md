@@ -12,9 +12,9 @@ contributors:
     - name: GarlicGo
       avatar: "https://avatars.githubusercontent.com/u/50868054"
       link: "https://github.com/GarlicGo"
-      contributions: 7
+      contributions: 1
 updatedby: GarlicGo
-updated: 2022-09-25T16:02:45.000Z
+updated: 2022-09-25T16:08:56.000Z
 ---
 
 本文为准备参与 Abyssers' blog 建设的成员提供 Git 工作流规范上的指导。
