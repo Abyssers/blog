@@ -46,7 +46,7 @@
         "@babel/eslint-parser": "^7.18.9",
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
-        "commander": "^9.4.0",
+        "commander": "^10.0.0",
         "eslint": "^8.22.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-prettier": "^4.2.1",
